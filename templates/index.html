@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1 class="display-4">¡Bienvenido!</h1>
+    <p class="lead">Este es un álbum fotográfico creado con Flask.</p>
+    <hr class="my-4">
+    <p>Puedes ver algunas fotos en la sección <a href="{{ url_for('fotos') }}">Fotos</a>.</p>
+  </div>
+{% endblock %}
