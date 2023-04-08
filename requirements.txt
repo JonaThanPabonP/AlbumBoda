@@ -7,3 +7,4 @@ mysql-connector-python==8.0.32
 PyMySQL==1.0.2
 SQLAlchemy==2.0.5.post1
 sqlparse==0.4.3
+Pillow==9.5.0
