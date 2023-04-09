@@ -7,7 +7,7 @@ class Config:
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = secrets.token_hex(16)
-    UPLOAD_FOLDER = 'static/fotos'
+    UPLOAD_FOLDER = 'static/fotos/'
     ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'gif'}
     SQLALCHEMY_DATABASE_URI = 'mysql://ujiigtehwj0vwbqa:H5X4AWjuSxZrK9JOQLwW@ba2y64hw2lqplqemrpqs-mysql.services.clever-cloud.com:3306/ba2y64hw2lqplqemrpqs'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -23,7 +23,8 @@ class Firebase:
             "storageBucket": "albumboda-5f8d0.appspot.com",
             "messagingSenderId": "1019849214546",
             "appId": "1:1019849214546:web:aff63cd59910f3ec97ed8b",
-            "measurementId": "G-HTGPFZ982R"
+            "measurementId": "G-HTGPFZ982R",
+            "databaseURL": ""
         }
         self.firebase = pyrebase.initialize_app(self.firebase_config)
         self.storage = self.firebase.storage()

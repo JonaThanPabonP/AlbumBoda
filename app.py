@@ -31,8 +31,9 @@ def upload():
         image = image.convert('RGB')
         image.thumbnail((1024,1024))
         nombre = secure_filename(file.filename)
-        firebase.upload_file("local_file_path", "gs://albumboda-5f8d0.appspot.com")
         image.save(os.path.join(app.config['UPLOAD_FOLDER'], nombre), optimize=True, quality=60)
+        local_file_path = app.config['UPLOAD_FOLDER'] + nombre
+        firebase.upload_file(local_file_path, nombre)
         descripcion = request.form['descripcion']
         fotos = Fotos(nombre=nombre, descripcion=descripcion, estado='A')
         mydb.session.add(fotos)
