@@ -7,6 +7,7 @@ class Fotos(mydb.Model):
     id = mydb.Column(mydb.Integer, primary_key=True)
     nombre = mydb.Column(mydb.String(30), nullable=False)
     descripcion = mydb.Column(mydb.String(100), nullable=True)
+    url = mydb.Column(mydb.String(200), nullable=False)
     estado = mydb.Column(mydb.String(1), nullable=False)
 
     def __repr__(self):
