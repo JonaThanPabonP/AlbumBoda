@@ -1,25 +1,16 @@
-{% extends 'base.html' %}
-
-{% block title %}Fotos{% endblock %}
-
-{% block content %}
-  {% if fotos %}
-    <div class="row">
-      {% for foto in fotos %}
-        {% if foto.estado == 'A' %}
-        <div class="col-md-4">
-          <div class="card mb-4 box-shadow">
-            <img class="card-img-top" src="{{ foto.url }}" alt="{{ foto.nombre }}" title="{{ foto.descripcion }}">
-            <div class="card-body">
-              <a href="#" class="btn btn-sm btn-outline-secondary">Ver</a>
-              <a href="#" class="btn btn-sm btn-outline-secondary">Editar</a>
-            </div>
-          </div>
-        </div>
-        {% endif %}
-      {% endfor %}
+{% extends 'base.html' %} {% block title %}Álbum Fotográfico{% endblock %} {% block content
+%} {% if fotos %}
+  <div id="album">
+    {% for foto in fotos %} {% if foto.state == 'A' %}
+    <div class="foto">
+      {% if foto.orientation == "Portrait" %}
+      <img src="{{ foto.url }}" alt="{{ foto.name }}" width="300" height="400" />
+      {% else %}
+      <img src="{{ foto.url }}" alt="{{ foto.name }}" width="400" height="300" />
+      {% endif %}
     </div>
-  {% else %}
-    <p>No hay fotos para mostrar.</p>
-  {% endif %}
-{% endblock %}
+    {% endif %} {% endfor %}
+  </div>
+{% else %}
+<p>No hay fotos para mostrar.</p>
+{% endif %} {% endblock %}
